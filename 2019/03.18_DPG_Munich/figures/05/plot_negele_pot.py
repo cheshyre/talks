@@ -26,7 +26,7 @@ ax.axhline(0, color='black', lw=0.75)
 plt.xlim(0, 2)
 
 plt.xlabel(r'$x_i - x_j$ (fm)')
-plt.ylabel(r'$V_{negele}$ (MeV)')
+plt.ylabel(r'$V_{\rm{Negele}}$ (MeV)')
 
 plt.gcf().subplots_adjust(left=0.175)
 #plt.gcf().subplots_adjust(right=1.100)

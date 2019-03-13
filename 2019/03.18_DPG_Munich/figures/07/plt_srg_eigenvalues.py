@@ -42,7 +42,7 @@ lambdas = [float(key) for key in data]
 vals = [data[key]['ho3'] for key in data]
 
 
-ax1.plot(lambdas, vals, 'b.', label=r'$Block$')
+ax1.plot(lambdas, vals, 'b.', label=r'Block')
 ax1.plot(lambdas, vals, 'b-')
 
 
@@ -58,9 +58,10 @@ plt.legend(loc='lower right')
 #  plt.ylabel('E_3')
 
 #  plt.gcf().set_size_inches(4.4, 3.8)
+plt.title('3-Body Binding Energy', x=0.4, y=1.05)
 plt.gcf().subplots_adjust(left=0.30)
 plt.gcf().subplots_adjust(right=0.99)
-plt.gcf().subplots_adjust(top=0.99)
-plt.gcf().subplots_adjust(bottom=0.25)
-plt.gcf().set_size_inches(1.7 * fig_height, 1.2 * fig_height)
+plt.gcf().subplots_adjust(top=0.85)
+plt.gcf().subplots_adjust(bottom=0.20)
+plt.gcf().set_size_inches(1.6 * fig_height, 1.6 * fig_height)
 plt.savefig('eigenvalues.pdf')

@@ -57,20 +57,22 @@ ax.set_yticks([0, 5, 10])
 ax.tick_params(
     axis='x',
     which='both',
-    bottom=False,
-    top=True,
-    labelbottom=False,
+    bottom=True,
+    top=False,
+    labelbottom=True,
+    labeltop=False,
 )
 
-ax.xaxis.set_label_position('top')
+#  ax.xaxis.set_label_position('top')
 
 plt.xlabel(r"$k'$ (fm$^{-1}$)")
 plt.ylabel(r'$k$ (fm$^{-1}$)')
+plt.title('Generator Form', x=0.5, y=1.05)
 
 #  plt.gcf().subplots_adjust(left=0.075)
 plt.gcf().subplots_adjust(right=1.05)
-plt.gcf().subplots_adjust(top=0.74)
-plt.gcf().subplots_adjust(bottom=0.01)
-plt.gcf().set_size_inches(1.6 * fig_height, 1.2 * fig_height)
+plt.gcf().subplots_adjust(top=0.85)
+plt.gcf().subplots_adjust(bottom=0.22)
+plt.gcf().set_size_inches(1.5 * fig_height, 1.6 * fig_height)
 plt.savefig('generator.pdf')
 
