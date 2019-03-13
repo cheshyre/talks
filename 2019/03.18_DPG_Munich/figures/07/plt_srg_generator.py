@@ -72,7 +72,7 @@ plt.title('Generator Form', x=0.5, y=1.05)
 #  plt.gcf().subplots_adjust(left=0.075)
 plt.gcf().subplots_adjust(right=1.05)
 plt.gcf().subplots_adjust(top=0.85)
-plt.gcf().subplots_adjust(bottom=0.22)
+plt.gcf().subplots_adjust(bottom=0.20)
 plt.gcf().set_size_inches(1.5 * fig_height, 1.6 * fig_height)
 plt.savefig('generator.pdf')
 
