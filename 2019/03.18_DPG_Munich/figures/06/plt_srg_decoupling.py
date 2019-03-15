@@ -36,7 +36,7 @@ ax1.set_xticks([1, 2, 5, 10, 20, 50])
 ax1.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
 plt.ylim((0, 34))
 
-plt.xlabel(r'$\lambda$')
+plt.xlabel(r'$\lambda$ (fm$^{-1}$)')
 plt.ylabel(r'$N_{max}$')
 plt.title('Decoupling', x=0.45, y=1.05)
 plt.gcf().subplots_adjust(left=0.23)

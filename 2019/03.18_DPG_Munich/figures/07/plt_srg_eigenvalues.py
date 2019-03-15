@@ -51,10 +51,10 @@ ax1.set_xticks([1, 2, 5, 10, 20, 50])
 ax1.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
 
 #  plt.title('\"Triton\" Eigenvalue Running')
-plt.xlabel(r'$\lambda$')
+plt.xlabel(r'$\lambda$ (fm$^{-1}$)')
 plt.ylabel(r'$E_3$ (MeV)')
 plt.ylim(-3.0, -2.5)
-plt.legend(loc='lower right')
+plt.legend(loc='lower right', fontsize='small')
 #  plt.ylabel('E_3')
 
 #  plt.gcf().set_size_inches(4.4, 3.8)

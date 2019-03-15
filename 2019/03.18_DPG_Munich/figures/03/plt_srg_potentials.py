@@ -46,16 +46,22 @@ interp = scipy.interpolate.RectBivariateSpline(data_nodes, data_nodes,
 evolved_potential = interp(nodes, nodes)
 
 fig=plt.figure(figsize=(0.6 * fig_height, fig_height))
-gs1 = gridspec.GridSpec(2, 1)
-gs1.update(hspace=0)
+gs1 = gridspec.GridSpec(2, 2, height_ratios=(1, 1), width_ratios=(20, 1))
+gs1.update(hspace=0, wspace=0)
 ax1 = fig.add_subplot(gs1[0, 0])
 ax2 = fig.add_subplot(gs1[1, 0])
-ax1.matshow(orig_potential, extent=[0.0, kmax, kmax, 0.0], vmax=2, vmin=-2)
+ax3 = fig.add_subplot(gs1[:, 1])
+mat = ax1.matshow(orig_potential, extent=[0.0, kmax, kmax, 0.0], vmax=2, vmin=-2)
 ax2.matshow(evolved_potential, extent=[0.0, kmax, kmax, 0.0], vmax=2, vmin=-2)
 ax1.set_xticks([0, 5, 10])
 ax2.set_xticks([])
 ax1.set_yticks([0, 5, 10])
 ax2.set_yticks([0, 5, 10])
+cax = plt.colorbar(mat, cax=ax3)
+cax.set_ticks([-2, 0, 2])
+labels = ['-2', '0', '']
+labels[-1] = r'2 (MeV)'
+cax.set_ticklabels(labels)
 ax2.tick_params(
     axis='x',
     which='both',
@@ -70,11 +76,11 @@ ax1.tick_params(
     top=True,
     labelbottom=False,
 )
-ax1.set_xlabel(r"$k'$ (fm$^{-1}$)")
+ax1.set_xlabel(r"$k'$ (fm$^{-1}$)", labelpad=8)
 ax1.xaxis.set_label_position('top')
 ax2.set_ylabel(r'$k$ (fm$^{-1}$)', y=1)
 ax1.text(1, 11, r'$\lambda = \infty$')
-ax2.text(1, 11, r'$\lambda = 1.5$')
+ax2.text(1, 11, r'$\lambda = 1.5$ fm$^{-1}$')
 #      if i != 0:
 #          ax.set_xticklabels(['', '', ''])
 #      else:
@@ -134,10 +140,10 @@ ax2.text(1, 11, r'$\lambda = 1.5$')
 #  #      labelbottom=False,
 #  #  )
 #  plt.xlabel(r"$k'$ (fm$^{-1}$)")
-plt.gcf().subplots_adjust(left=0.22)
-plt.gcf().subplots_adjust(right=1.01)
-plt.gcf().subplots_adjust(top=0.84)
-plt.gcf().subplots_adjust(bottom=0.01)
-plt.gcf().set_size_inches(1.0 * fig_height, 1.6 * fig_height)
+plt.gcf().subplots_adjust(left=0.24)
+plt.gcf().subplots_adjust(right=0.715)
+plt.gcf().subplots_adjust(top=0.80)
+plt.gcf().subplots_adjust(bottom=0.05)
+plt.gcf().set_size_inches(1.5 * fig_height, 1.8 * fig_height)
 plt.savefig('srg_potentials.pdf')
 

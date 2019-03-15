@@ -67,13 +67,15 @@ for i, lam in enumerate(lambdas):
     ax.set_xticks([0, 5, 10])
     ax.set_yticks([0, 5, 10])
     if i == 2:
-        ax.set_xlabel(r"$k'$ (fm$^{-1}$)")
+        ax.set_xlabel(r"$k'$ (fm$^{-1}$)", labelpad=8)
         ax.xaxis.set_label_position('top')
     if i == 0:
         ax.set_ylabel(r"$k$ (fm$^{-1}$)")
+    unit = r' fm$^{-1}$'
     if lam == 50:
-        lam = '\\infty'
-    ax.text(1, 11, '$\\lambda = {}$'.format(lam))
+        lam = r'\infty'
+        unit = ''
+    ax.text(1, 11, '$\\lambda = {}${}'.format(lam, unit))
 
     ax.tick_params(
         axis='x',
@@ -112,11 +114,10 @@ plt.tick_params(
     top=True,
     labelbottom=False,
 )
-plt.xlabel(r"$k'$ (fm$^{-1}$)")
 #  plt.gcf().subplots_adjust(left=0.075)
 plt.gcf().subplots_adjust(right=0.85)
-plt.gcf().subplots_adjust(top=0.85)
-plt.gcf().subplots_adjust(bottom=-0.05)
+plt.gcf().subplots_adjust(top=0.82)
+plt.gcf().subplots_adjust(bottom=-0.08)
 plt.gcf().set_size_inches(5.0 * fig_height, 1.2 * fig_height)
 plt.savefig('potentials.pdf')
 

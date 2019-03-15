@@ -18,7 +18,7 @@ path = './fig_data/{}'
 
 fig_height = 1.3
 
-file = glob.glob(path.format('*decoupling.json'))[0]
+file = glob.glob(path.format('t_rel*decoupling.json'))[0]
 
 with open(file) as f:
     data = json.load(f)
@@ -28,7 +28,19 @@ vals = [data[key]['ho'] for key in data]
 
 fig1, ax1 = plt.subplots()
 
-ax1.plot(lambdas, vals, 'r.')
+ax1.plot(lambdas, vals, 'r.', label=r'$T_{rel}$')
+#  ax1.plot(lambdas, vals, 'r-')
+
+file = glob.glob(path.format('BlD*decoupling.json'))[0]
+
+with open(file) as f:
+    data = json.load(f)
+
+lambdas = [float(key) for key in data]
+vals = [data[key]['ho'] for key in data]
+
+ax1.plot(lambdas, vals, 'b.', label=r'Block')
+
 #  ax1.plot(lambdas, vals, 'r-')
 
 ax1.set_xscale('log')
@@ -36,7 +48,7 @@ ax1.set_xticks([1, 2, 5, 10, 20, 50])
 ax1.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
 plt.ylim((0, 34))
 
-plt.xlabel(r'$\lambda$')
+plt.xlabel(r'$\lambda$ (fm$^{-1}$)')
 plt.ylabel(r'$N_{max}$')
 plt.title('Decoupling', x=0.45, y=1.05)
 plt.gcf().subplots_adjust(left=0.23)

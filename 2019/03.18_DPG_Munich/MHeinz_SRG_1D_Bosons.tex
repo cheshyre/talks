@@ -39,7 +39,7 @@
       \begin{column}{0.4\textwidth}
         \begin{center}
           \includegraphics[width=\textwidth]{figures/02/hatsuda_phen-pot_new}
-          \\ \small{Aoki et al., Comput.~Sci.~Dis.~(2008)}
+          \\ \footnotesize{Aoki et al., Comput.~Sci.~Dis.~(2008)}
           % cite https://iopscience.iop.org/article/10.1088/1749-4699/1/1/015009
         \end{center}
       \end{column}
@@ -48,6 +48,7 @@
 
   \begin{frame}
     \frametitle{The Similarity Renormalization Group (SRG)}
+    \vskip-1em
     \begin{columns}[c]
       \begin{column}{0.5\textwidth}
         SRG:
@@ -61,6 +62,7 @@
           \item $s=1/\lambda^4$
           \item $H_s$ goes to form of $G$
         \end{itemize}
+        \vskip1em
         \visible<2->{Features:}
         \begin{itemize}
           \item<2-> Improved many-body convergence
@@ -70,11 +72,13 @@
       \begin{column}{0.5\textwidth}
         \begin{center}
           \begin{overprint}
-            \onslide<1>\includegraphics[width=0.55\textwidth]{figures/03/srg_potentials}
+            \onslide<1>\includegraphics[width=0.82\textwidth]{figures/03/srg_potentials}
             \onslide<2>\includegraphics[width=\textwidth]{figures/03/roth1}
+            \onslide<2>{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
             \onslide<3->\includegraphics[width=\textwidth]{figures/03/roth2}
+            \onslide<3->{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
           \end{overprint}
-          \visible<2->{\small{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
+          % \visible<2->{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
         \end{center}
         % cite https://inspirehep.net/record/900106
       \end{column}
@@ -89,14 +93,17 @@
         \begin{equation*}
           \color{black}\frac{dV_s(k, k')}{ds} = \textcolor{red}{-V_s(k, k')}(k^2 - k'^2)^2 + ...
         \end{equation*}
+        \vskip-1.5em
         \begin{itemize}
           \item Exponential suppression for far off diagonal matrix elements
         \end{itemize}
         \vskip1em
+        \pause
         For $G_s = T_{rel} + X_s$ with $X_s(k, k') = W(k, k') V_s(k, k')$:
         \begin{equation*}
           \color{black}\frac{dV_s(k, k')}{ds} = \textcolor{blue}{-(V_s(k, k') - X_s(k, k'))}(k^2 - k'^2)^2 + ...
         \end{equation*}
+        \vskip-1.5em
         \begin{itemize}
           \item Change in matrix elements small when $X_s(k, k') = V_s(k, k')$
           \item Choose $W(k, k')$ to reflect what we want SRG to do
@@ -106,7 +113,8 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{The ``Jurgenson'' Model}
+    \frametitle{The ``Jurgenson'' Model \\ \normalfont \footnotesize{Jurgenson, Furnstahl, Nucl.Phys. A818 (2009)}}
+    \vskip-2em
     \begin{columns}[c]
       \begin{column}{0.5\textwidth}
         Features:
@@ -116,6 +124,7 @@
           \item Negele potential
           \item Jacobi harmonic oscillator for many-body results
         \end{itemize}
+        \vskip1em
         Advantages:
         \begin{itemize}
           \item Model is simple
@@ -123,6 +132,7 @@
         \end{itemize}
       \end{column}
       \begin{column}{0.5\textwidth}
+        \vskip1.2em
         \includegraphics[width=\textwidth]{figures/05/negele_potential}
         % Missing figure of Negele potential
       \end{column}
@@ -175,14 +185,20 @@
         Status:
         \begin{itemize}
           \item Have framework to test alternative generators
-          \item Considering generators of form $T + WV$ \\ makes implementation of new generators easy
+          \item Considering generators of form $T + WV_s$ \\ makes implementation of new generators easy
         \end{itemize}
+        \vskip1em
         Direction:
         \begin{itemize}
           \item Incorporate 4- and 5-body binding energies
           \item Learn what features of generators lead to what behavior
           \item Identify features that lead to optimal results
         \end{itemize}
+        \pause
+        \vskip1em
+        \begin{center}
+          \large{Thank you!}
+        \end{center}
       \end{column}
     \end{columns}
   \end{frame}
