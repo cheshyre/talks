@@ -43,7 +43,7 @@
       \begin{column}{0.4\textwidth}
         \begin{center}
           \includegraphics[width=\textwidth]{figures/02/hatsuda_phen-pot_new}
-          \\ \footnotesize{Aoki et al., Comput.~Sci.~Dis.~(2008)}
+          \\ \footnotesize{Aoki \textit{et al.}, Comput.~Sci.~Dis.~(2008)}
           % cite https://iopscience.iop.org/article/10.1088/1749-4699/1/1/015009
         \end{center}
       \end{column}
@@ -55,7 +55,7 @@
     \vskip-1em
     \begin{columns}[c]
       \begin{column}{0.5\textwidth}
-        SRG:
+        \vskip-1em
         \begin{itemize}
           \item Class of continuous unitary transformations given by:
         \end{itemize}
@@ -65,22 +65,27 @@
         \begin{itemize}
           \item $s=1/\lambda^4$
           \item $H_s$ goes to form of $G$
+          \item Typical choice: $G=T_{rel}$ \visible<1>{(right)}
         \end{itemize}
         \vskip1em
-        \visible<2->{Features:}
+        \visible<2->{Features/Challenges:}
         \begin{itemize}
-          \item<2-> Improved many-body convergence
-          \item<2-> Induction of many-body forces
+          \item<2-> Improves many-body convergence
+          \item<2-> Induces many-body forces
         \end{itemize}
       \end{column}
       \begin{column}{0.5\textwidth}
         \begin{center}
           \begin{overprint}
             \onslide<1>\includegraphics[width=0.82\textwidth]{figures/03/srg_potentials}
-            \onslide<2>\includegraphics[width=\textwidth]{figures/03/roth1} \\
-            \onslide<2>{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
-            \onslide<3->\includegraphics[width=\textwidth]{figures/03/roth2} \\
-            \onslide<3->{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
+            % \onslide<1>Here $G=T_{rel}$
+            % \onslide<2>\includegraphics[width=\textwidth]{figures/03/roth1} \\
+            % \onslide<2>{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
+            \onslide<2->\includegraphics[width=\textwidth]{figures/03/roth2} \\
+            \begin{center}
+              \vskip-2em
+              \onslide<2->{\footnotesize{Roth \textit{et al.}, Phys.Rev.Lett.~107 (2011) 072501}}
+            \end{center}
           \end{overprint}
           % \visible<2->{\footnotesize{Roth et al., Phys.Rev.Lett.~107 (2011) 072501}}
         \end{center}
@@ -117,22 +122,22 @@
   \end{frame}
 
   \begin{frame}
-    \frametitle{The ``Jurgenson'' Model \\ \normalfont \footnotesize{Jurgenson, Furnstahl, Nucl.Phys. A818 (2009)}}
+    \frametitle{The Negele Model \\ \vskip-0.4em \normalfont \footnotesize{Alexandrou \textit{et al.}, Phys.Rev.~C39 (1989) \\ \vskip-1.8em Jurgenson, Furnstahl, Nucl.Phys.~A818 (2009)}}
     \vskip-2em
     \begin{columns}[c]
-      \begin{column}{0.5\textwidth}
+      \begin{column}{0.4\textwidth}
         Features:
         \begin{itemize}
           \item 1-D
           \item Bosons
           \item Negele potential
-          \item Jacobi harmonic oscillator for many-body results
+          \item Jacobi harmonic oscillator \\ for many-body results
         \end{itemize}
         \vskip1em
         Advantages:
         \begin{itemize}
           \item Model is simple
-          \item Results generalize well to 3-D calculations
+          \item Results generalize well \\ to 3-D calculations
         \end{itemize}
       \end{column}
       \begin{column}{0.5\textwidth}
@@ -189,14 +194,14 @@
         Status:
         \begin{itemize}
           \item Have framework to test alternative generators
-          \item Considering generators of form $T + WV_s$ \\ makes implementation of new generators easy
+          \item Considering generators of form $T + WV_s$ \\ provides an interesting way to explore alternative generators
         \end{itemize}
         \vskip1em
         Direction:
         \begin{itemize}
-          \item Incorporate 4- and 5-body binding energies
+          \item Extend analysis to 4- and 5-body systems
           \item Learn what features of generators lead to what behavior
-          \item Identify features that lead to optimal results
+          \item Identify features that lead to small four and higher-body forces
         \end{itemize}
         \pause
         \vskip1em
