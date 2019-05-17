@@ -53,7 +53,9 @@ data_nodes = np.array(data["nodes"])
 nodes = np.linspace(0.0, kmax, 200)
 
 # Set up initial figure
-figure = plt.figure(1, (len(lambdas) * fig_height + fig_height / 4, fig_height))
+figure = plt.figure(
+    1, (len(lambdas) * fig_height + fig_height / 4, fig_height)
+)
 
 # Set up grid in figure
 grid = ImageGrid(
@@ -73,7 +75,9 @@ for i, lam in enumerate(lambdas):
     potential = np.array(data["data"][str(lam)])
 
     # Interpolate potential
-    interp = scipy.interpolate.RectBivariateSpline(data_nodes, data_nodes, potential)
+    interp = scipy.interpolate.RectBivariateSpline(
+        data_nodes, data_nodes, potential
+    )
     potential = interp(nodes, nodes)
 
     # Plot potential matrix on corresponding axis in grid
@@ -101,7 +105,9 @@ for i, lam in enumerate(lambdas):
     ax.text(1, 11, "$\\lambda = {}${}".format(lam, unit))
 
     # Move xticks to top
-    ax.tick_params(axis="x", which="both", bottom=False, top=True, labelbottom=False)
+    ax.tick_params(
+        axis="x", which="both", bottom=False, top=True, labelbottom=False
+    )
     # Disable yticks for grids after the left most
     if i != 0:
         ax.tick_params(axis="y", which="both", left=False)
@@ -118,7 +124,9 @@ for i, cax in enumerate(grid.cbar_axes):
     cax.set_yticklabels(labels)
 
 # Set xticks to top
-plt.tick_params(axis="x", which="both", bottom=False, top=True, labelbottom=False)
+plt.tick_params(
+    axis="x", which="both", bottom=False, top=True, labelbottom=False
+)
 
 # Adjust margins
 #  plt.gcf().subplots_adjust(left=0.075)

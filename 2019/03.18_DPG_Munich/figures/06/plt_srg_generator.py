@@ -50,7 +50,9 @@ nodes = np.linspace(0.0, kmax, 40)
 
 # Set up generator data
 generator = np.array(data["generator"])
-interp = scipy.interpolate.RectBivariateSpline(data_nodes, data_nodes, generator)
+interp = scipy.interpolate.RectBivariateSpline(
+    data_nodes, data_nodes, generator
+)
 generator_interp = -1 * interp(nodes, nodes)
 for i in range(len(generator_interp)):
     generator_interp[i][i] = 1.0
@@ -73,7 +75,12 @@ ax.set_yticks([0, 5, 10])
 
 # Set x axis ticks to be on the bottom
 ax.tick_params(
-    axis="x", which="both", bottom=True, top=False, labelbottom=True, labeltop=False
+    axis="x",
+    which="both",
+    bottom=True,
+    top=False,
+    labelbottom=True,
+    labeltop=False,
 )
 
 # Set axis labels and title
