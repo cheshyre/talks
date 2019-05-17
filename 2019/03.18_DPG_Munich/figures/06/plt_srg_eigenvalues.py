@@ -24,42 +24,42 @@ plt.rc("text", usetex=True)
 
 # Set path for data
 # pylint: disable=C0103
-path = './fig_data/{}'
+path = "./fig_data/{}"
 
 # Height for figure
 fig_height = 1.3
 
 # Load file
-file = glob.glob(path.format('t_rel*eigen*.json'))[0]
+file = glob.glob(path.format("t_rel*eigen*.json"))[0]
 with open(file) as f:
     data = json.load(f)
 
 # Get lambdas and values
 lambdas = [float(key) for key in data]
-vals = [data[key]['ho3'] for key in data]
+vals = [data[key]["ho3"] for key in data]
 
 # Create figure
 fig1, ax1 = plt.subplots()
 
 # Plot data, once for points, one for the line
-ax1.plot(lambdas, vals, 'r.', label=r'$T_{rel}$')
-ax1.plot(lambdas, vals, 'r-')
+ax1.plot(lambdas, vals, "r.", label=r"$T_{rel}$")
+ax1.plot(lambdas, vals, "r-")
 
 # Set x-axis scale and ticks
-ax1.set_xscale('log')
+ax1.set_xscale("log")
 ax1.set_xticks([1, 2, 5, 10, 20, 50])
 ax1.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
 
 # Set axis labels and title
-plt.xlabel(r'$\lambda$ (fm$^{-1}$)')
-plt.ylabel(r'$E_3$ (MeV)')
-plt.title('3-Body Binding Energy', x=0.4, y=1.05)
+plt.xlabel(r"$\lambda$ (fm$^{-1}$)")
+plt.ylabel(r"$E_3$ (MeV)")
+plt.title("3-Body Binding Energy", x=0.4, y=1.05)
 
 # Set y-axis limits
 plt.ylim(-3.0, -2.5)
 
 # Enable legend
-plt.legend(loc='lower right', fontsize='small')
+plt.legend(loc="lower right", fontsize="small")
 
 # Adjust margins
 plt.gcf().subplots_adjust(left=0.30)
@@ -71,4 +71,4 @@ plt.gcf().subplots_adjust(bottom=0.20)
 plt.gcf().set_size_inches(1.6 * fig_height, 1.6 * fig_height)
 
 # Save as PDF
-plt.savefig('eigenvalues.pdf')
+plt.savefig("eigenvalues.pdf")

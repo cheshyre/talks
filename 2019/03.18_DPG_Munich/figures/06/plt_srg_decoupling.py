@@ -24,28 +24,28 @@ plt.rc("text", usetex=True)
 
 # Set path for data
 # pylint: disable=C0103
-path = './fig_data/{}'
+path = "./fig_data/{}"
 
 # Height for figure
 fig_height = 1.3
 
 # Load file
-file = glob.glob(path.format('*decoupling.json'))[0]
+file = glob.glob(path.format("*decoupling.json"))[0]
 with open(file) as f:
     data = json.load(f)
 
 # Read out lambdas and values
 lambdas = [float(key) for key in data]
-vals = [data[key]['ho'] for key in data]
+vals = [data[key]["ho"] for key in data]
 
 # Create plot
 fig1, ax1 = plt.subplots()
 
 # Plot data
-ax1.plot(lambdas, vals, 'r.')
+ax1.plot(lambdas, vals, "r.")
 
 # Set x-axis scale and ticks
-ax1.set_xscale('log')
+ax1.set_xscale("log")
 ax1.set_xticks([1, 2, 5, 10, 20, 50])
 ax1.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
 
@@ -53,9 +53,9 @@ ax1.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
 plt.ylim((0, 34))
 
 # Set labels and titles
-plt.xlabel(r'$\lambda$ (fm$^{-1}$)')
-plt.ylabel(r'$N_{max}$')
-plt.title('Decoupling', x=0.45, y=1.05)
+plt.xlabel(r"$\lambda$ (fm$^{-1}$)")
+plt.ylabel(r"$N_{max}$")
+plt.title("Decoupling", x=0.45, y=1.05)
 
 # Adjust margins
 plt.gcf().subplots_adjust(left=0.23)
@@ -67,4 +67,4 @@ plt.gcf().subplots_adjust(bottom=0.20)
 plt.gcf().set_size_inches(1.6 * fig_height, 1.6 * fig_height)
 
 # Save as PDF
-plt.savefig('decoupling.pdf')
+plt.savefig("decoupling.pdf")

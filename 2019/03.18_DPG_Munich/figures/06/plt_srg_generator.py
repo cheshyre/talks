@@ -26,7 +26,7 @@ plt.rc("text", usetex=True)
 
 # Set path for data
 # pylint: disable=C0103
-path = './fig_data/{}'
+path = "./fig_data/{}"
 
 # Height for figure
 fig_height = 1.3
@@ -35,7 +35,7 @@ fig_height = 1.3
 kmax = 12.0
 
 # Get file
-file = glob.glob(path.format('*pot*.json'))
+file = glob.glob(path.format("*pot*.json"))
 file = file[0]
 
 # Load data
@@ -43,16 +43,14 @@ with open(file) as f:
     data = json.load(f)
 
 # Get old nodes for data
-data_nodes = np.array(data['nodes'])
+data_nodes = np.array(data["nodes"])
 
 # Define new even grid for data
 nodes = np.linspace(0.0, kmax, 40)
 
 # Set up generator data
-generator = np.array(data['generator'])
-interp = scipy.interpolate.RectBivariateSpline(
-    data_nodes, data_nodes, generator
-)
+generator = np.array(data["generator"])
+interp = scipy.interpolate.RectBivariateSpline(data_nodes, data_nodes, generator)
 generator_interp = -1 * interp(nodes, nodes)
 for i in range(len(generator_interp)):
     generator_interp[i][i] = 1.0
@@ -61,8 +59,13 @@ for i in range(len(generator_interp)):
 fig, ax = plt.subplots()
 
 # Plot matrix
-ax.matshow(generator_interp, extent=[0, kmax, kmax, 0], vmax=1, vmin=-1,
-            cmap=plt.get_cmap('bwr'))
+ax.matshow(
+    generator_interp,
+    extent=[0, kmax, kmax, 0],
+    vmax=1,
+    vmin=-1,
+    cmap=plt.get_cmap("bwr"),
+)
 
 # Set axis ticks
 ax.set_xticks([0, 5, 10])
@@ -70,18 +73,13 @@ ax.set_yticks([0, 5, 10])
 
 # Set x axis ticks to be on the bottom
 ax.tick_params(
-    axis='x',
-    which='both',
-    bottom=True,
-    top=False,
-    labelbottom=True,
-    labeltop=False,
+    axis="x", which="both", bottom=True, top=False, labelbottom=True, labeltop=False
 )
 
 # Set axis labels and title
 plt.xlabel(r"$k'$ (fm$^{-1}$)")
-plt.ylabel(r'$k$ (fm$^{-1}$)')
-plt.title('Generator Form', x=0.5, y=1.05)
+plt.ylabel(r"$k$ (fm$^{-1}$)")
+plt.title("Generator Form", x=0.5, y=1.05)
 
 # Adjust margins
 # plt.gcf().subplots_adjust(left=0.075)
@@ -93,4 +91,4 @@ plt.gcf().subplots_adjust(bottom=0.20)
 plt.gcf().set_size_inches(1.5 * fig_height, 1.6 * fig_height)
 
 # Save as PDF
-plt.savefig('generator.pdf')
+plt.savefig("generator.pdf")
