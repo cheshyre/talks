@@ -92,9 +92,10 @@
 
         Example Ward identity:
 
-        \begin{equation*}
-          \dmulox{\Gmu(x,y,z)}{y} = (\delta^4(y-x) - \delta^4(y-z))\mel*{0}{\timeorder{\Phi(x) \Phidag(z)}}{0},
-        \end{equation*}
+        \begin{align*}
+          \dmulox{\Gmu(x,y,z)}{y} = & (\delta^4(y-x) - \delta^4(y-z))\mel*{0}{\timeorder{\Phi(x) \Phidag(z)}}{0} \\
+                                    & + \mel*{0}{\timeorder{\Phi(x) \dmulopx{\Jmu(y)}{y} \Phidag(z)}}{0},
+        \end{align*}
       \end{column}
     \end{columns}
   \end{frame}
@@ -130,7 +131,6 @@
     \begin{columns}[c]
       \begin{column}{0.8\textwidth}
         Generating functional:
-
         \begin{equation*}
           W[j, j^{*}, j_{\mu}] = \mel*{0}{\timeorder{\exp{i\int d^4x[j(x) \Phidag (x) + j^{*}(x) \Phi(x) + j_{\mu}(x) \Jmu(x)]}}}{0},
         \end{equation*}
@@ -148,6 +148,11 @@
       \only<1>{W[j, j^{*}, j_{\mu}] = \int \mathcal{D}\Phistar \mathcal{D}\Phi \exp(i \int d^4x[\mathcal{L}(x) + j(x) \Phi^{*} (x) + j^{*}(x) \Phi(x) + j_{\mu}(x) \Jmu(x)]),}
       \only<2>{W[j, j^{*}, j_{\mu}] = \int \mathcal{D}\Phistar \mathcal{D}\Phi \exp(i S[\Phi, \Phistar, j, j^{*}, j_{\mu}]),}
     \end{equation*}
+    \begin{columns}[c]
+      \begin{column}{0.8\textwidth}
+    \only<2>{Note: Only in the presence of external fields can we demand $\mathcal{L}$ remain invariant under \textit{local} transformations.}
+      \end{column}
+    \end{columns}
 
   \end{frame}
 
