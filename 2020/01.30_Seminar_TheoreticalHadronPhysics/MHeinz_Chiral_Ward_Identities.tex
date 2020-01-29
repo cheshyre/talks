@@ -50,7 +50,7 @@
   \begin{frame}
     \frametitle{Scalar $\Phi^4$ theory with a global $\U{1}$ symmetry}
     \begin{equation*}
-      \mathcal{L} = \frac{1}{2}(\dmulop{\Phidag}\dmuhip{\Phi})
+      \mathcal{L}^0 = \frac{1}{2}(\dmulop{\Phidag}\dmuhip{\Phi})
       - \frac{m^2}{2} \Phidag \Phi - \frac{\lambda}{4} (\Phidag \Phi)^2
     \end{equation*}
 
@@ -146,22 +146,21 @@
         \begin{equation*}
           W[j, j^{*}, j_{\mu}] = \mel*{0}{\timeorder{\exp{i\int d^4x[j(x) \Phidag (x) + j^{*}(x) \Phi(x) + j_{\mu}(x) \Jmu(x)]}}}{0},
         \end{equation*}
-
         Our example Green's function:
         \begin{equation*}
           \Gmu(x,y,z) = \left.(-i)^3 \frac{\delta^3 W[j, j^{*}, j_{\mu}]}{\delta j^{*}(x) \delta j_{\mu}(y) \delta j(z)}\right\rvert_{j=0,j^{*}=0,j_{\mu}=0},
         \end{equation*}
-
         As path integral:
-      \end{column}
-    \end{columns}
-
+        \vskip-1em
     \begin{equation*}
-      \only<1>{W[j, j^{*}, j_{\mu}] = \int \mathcal{D}\Phistar \mathcal{D}\Phi \exp(i \int d^4x[\mathcal{L}(x) + j(x) \Phi^{*} (x) + j^{*}(x) \Phi(x) + j_{\mu}(x) \Jmu(x)]),}
+      \only<1>{W[j, j^{*}, j_{\mu}] = \int \mathcal{D}\Phistar \mathcal{D}\Phi \exp(i \int d^4x[\mathcal{L}^{0}(x) + \mathcal{L}_{\textrm{ext}}(x)]),}
       \only<2>{W[j, j^{*}, j_{\mu}] = \int \mathcal{D}\Phistar \mathcal{D}\Phi \exp(i S[\Phi, \Phistar, j, j^{*}, j_{\mu}]),}
     \end{equation*}
-    \begin{columns}[c]
-      \begin{column}{0.8\textwidth}
+    \only<1>{
+      \begin{equation*}
+        \mathcal{L}_{\textrm{ext}}(x) = j(x) \Phi^{*} (x) + j^{*}(x) \Phi(x) + j_{\mu}(x) \Jmu(x),
+      \end{equation*}
+    }
     \only<2>{Note: Only in the presence of external fields can we demand $\mathcal{L}$ remain invariant under \textit{local} transformations.}
       \end{column}
     \end{columns}
@@ -307,8 +306,8 @@ with
 \begin{equation*}
   \only<1>{\lext = \sum_{a = 1}^{8} v_a^{\mu} \vecoct + \frac{1}{3} v_{(s)}^{\mu} \vecsing + \sum_{a=1}^{8} a_a^{\mu} \axvoct
   - \sum_{a=0}^{8}s_{a} \scalardensity{a} + \sum_{a=0}^{8}p_{a} \pscalardensity{a},}
-  \only<2>{\lext = \bar{q} \gamma_{\mu} \left( v^{\mu} + \frac{1}{3} v_{(s)}^{\mu} + \gamma_5 a^{\mu} \right) q
-  - \bar{q} ( s - i \gamma_5 p) q,}
+  \only<2>{\color{black}\lext = \bar{q} \gamma_{\mu} \left( \color{red}v^{\mu} \color{black}+ \frac{1}{3} \color{red}v_{(s)}^{\mu} \color{black}+ \gamma_5 \color{red}a^{\mu} \color{black}\right) q
+  - \bar{q} ( \color{red}s \color{black}- i \gamma_5 \color{red}p\color{black}) q,}
 \end{equation*}
 
 \vskip1em
