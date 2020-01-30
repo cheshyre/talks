@@ -1,0 +1,4 @@
+all: MHeinz_Chiral_Ward_Identities.pdf
+
+MHeinz_Chiral_Ward_Identities.pdf: MHeinz_Chiral_Ward_Identities.tex macros.tex
+	latexrun MHeinz_Chiral_Ward_Identities.tex
